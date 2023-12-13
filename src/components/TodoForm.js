@@ -6,6 +6,7 @@ function TodoForm({ addTodo }) {
   const [todo, setTodo] = useState({
     id: "",
     task: "",
+    when: "",
     completed: false
   });
 
@@ -14,7 +15,11 @@ function TodoForm({ addTodo }) {
     // event for input elements
     setTodo({ ...todo, task: e.target.value });
   }
-
+  function handleTaskDateChange(e) {
+    // e.target.value contains new input from onChange
+    // event for input elements
+    setTodo({ ...todo, when: e.target.value });
+  }
   function handleSubmit(e) {
     e.preventDefault(); // prevents browser refresh
     // trim() gets rid of string whitespace
@@ -27,11 +32,18 @@ function TodoForm({ addTodo }) {
   return (
     <form className="todo-form" onSubmit={handleSubmit}>
       <TextField
-        label="Task"
+        label="Who"
         type="text"
         name="task"
         value={todo.task}
         onChange={handleTaskInputChange}
+      />
+      <TextField
+        label="When"
+        type="text"
+        name="task"
+        value={todo.when}
+        onChange={handleTaskDateChange}
       />
       <Button type="submit">Submit</Button>
     </form>

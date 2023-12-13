@@ -20,7 +20,7 @@ function Todo({ todo, toggleComplete, removeTodo }) {
           textDecoration: todo.completed ? "line-through" : null
         }}
       >
-        {todo.task}
+        {todo.task} on {todo.when}
       </Typography>
       <IconButton onClick={handleRemoveClick}>
         <CloseIcon />
