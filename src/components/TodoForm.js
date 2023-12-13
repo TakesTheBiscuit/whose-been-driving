@@ -41,6 +41,7 @@ function TodoForm({ addTodo }) {
         value={todo.task}
         onChange={handleTaskInputChange}
         id="whoField"
+        style={{width:'35%'}}
       />
       <TextField
         label="When"
@@ -52,9 +53,12 @@ function TodoForm({ addTodo }) {
         InputLabelProps={{
           shrink: true,
         }}
-      />
+        style={{width:'35%'}}
 
-      <Button type="submit" variant="outlined" color="primary" >ADD</Button>
+      />
+      <div>
+        <Button type="submit" variant="outlined" color="primary" style={{padding:0, marginLeft: 10}}>ADD</Button>
+      </div>
     </form>
   );
 }
