@@ -42,6 +42,9 @@ function TodoForm({ addTodo }) {
         onChange={handleTaskInputChange}
         id="whoField"
         style={{width:'35%'}}
+        InputLabelProps={{
+          shrink: true,
+        }}
       />
       <TextField
         label="When"
