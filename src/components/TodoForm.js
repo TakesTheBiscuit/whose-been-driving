@@ -1,6 +1,7 @@
 import { Button, TextField } from "@material-ui/core";
 import React, { useState } from "react";
 import { v4 as uuid } from "uuid";
+import 'date-fns';
 
 function TodoForm({ addTodo }) {
   const [todo, setTodo] = useState({
@@ -25,7 +26,9 @@ function TodoForm({ addTodo }) {
     // trim() gets rid of string whitespace
     if (todo.task.trim()) {
       addTodo({ ...todo, id: uuid() });
-      setTodo({ ...todo, task: "" });
+      setTodo({ ...todo, task: "", when: ""});
+      // refocus the who box for continued input (smashing enter ) - no mouse needed
+      document.getElementById('whoField').focus();
     }
   }
 
@@ -37,15 +40,21 @@ function TodoForm({ addTodo }) {
         name="task"
         value={todo.task}
         onChange={handleTaskInputChange}
+        id="whoField"
       />
       <TextField
         label="When"
-        type="text"
         name="task"
         value={todo.when}
         onChange={handleTaskDateChange}
+        type="date"
+        defaultValue="2017-05-24"
+        InputLabelProps={{
+          shrink: true,
+        }}
       />
-      <Button type="submit">Submit</Button>
+
+      <Button type="submit" variant="outlined" color="primary" style={{marginLeft: 10}}>ADD</Button>
     </form>
   );
 }

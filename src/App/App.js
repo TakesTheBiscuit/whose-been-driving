@@ -46,9 +46,12 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <Typography style={{ padding: 16 }} variant="h1">
+    <div className="App" style={{padding:20}}>
+      <Typography style={{ padding: 16, fontSize: '2rem' }} variant="h1">
         Whose been driving?
+      </Typography>
+      <Typography style={{ padding: 0, fontSize: '1.15rem', marginBottom: 20, marginTop: -15 }} variant="h2">
+        Serious app by <a href="https://github.com/TakesTheBiscuit/whose-been-driving">TakesTheBiscuit</a>
       </Typography>
       <TodoForm addTodo={addTodo} />
       <TodoList
