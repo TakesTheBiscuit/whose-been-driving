@@ -54,7 +54,7 @@ function TodoForm({ addTodo }) {
         }}
       />
 
-      <Button type="submit" variant="outlined" color="primary" style={{marginLeft: 10}}>ADD</Button>
+      <Button type="submit" variant="outlined" color="primary" >ADD</Button>
     </form>
   );
 }
