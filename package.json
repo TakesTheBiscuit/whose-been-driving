@@ -2,7 +2,7 @@
   "name": "react-todo-list",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://gseals.github.io/Local-Storage-React-ToDo-App",
+  "homepage": "https://takesthebiscuit.github.io/whose-been-driving/",
   "dependencies": {
     "@material-ui/core": "^4.9.7",
     "@material-ui/icons": "^4.9.1",
