@@ -1,9 +1,13 @@
 import { List } from "@material-ui/core";
 import React from "react";
 import Todo from "./Todo";
+import TodoForm from "./TodoForm";
 
-function TodoList({ todos, removeTodo, toggleComplete }) {
+function TodoList({ todos, addTodo,removeTodo, toggleComplete }) {
   return (
+    <>
+    <TodoForm addTodo={addTodo} />
+
     <List>
       {todos.map(todo => (
         <Todo
@@ -14,6 +18,7 @@ function TodoList({ todos, removeTodo, toggleComplete }) {
         />
       ))}
     </List>
+    </>
   );
 }
 
